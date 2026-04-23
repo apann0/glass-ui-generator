@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Glass UI Generator — Free visual tool to create glassmorphism CSS with live preview and one-click copy.">
+  <meta name="keywords" content="glassmorphism, CSS generator, glass UI, frosted glass, CSS tool">
+  <title>Glass UI Generator — Create Beautiful Glassmorphism CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <header id="app-header">
+    <div class="header-inner">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="8" stroke="url(#lg)" stroke-width="2.5" fill="rgba(255,255,255,0.08)"/><rect x="7" y="7" width="18" height="18" rx="5" fill="url(#lg)" opacity="0.35"/><rect x="11" y="11" width="10" height="10" rx="3" fill="url(#lg)" opacity="0.7"/><defs><linearGradient id="lg" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs></svg>
+        <h1>Glass UI <span class="accent">Generator</span></h1>
+      </div>
+      <nav class="header-nav" id="header-nav">
+        <a href="#generator" class="nav-link active" data-section="generator">Generator</a>
+        <a href="#presets" class="nav-link" data-section="presets">Presets</a>
+        <a href="#about" class="nav-link" data-section="about">About</a>
+      </nav>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- GENERATOR -->
+    <section id="generator" class="section active-section">
+      <div class="section-header">
+        <h2>Design Your Glass Component</h2>
+        <p>Adjust controls and see your glassmorphism effect update in real-time.</p>
+      </div>
+      <div class="generator-layout">
+        <div class="preview-panel" id="preview-panel">
+          <div class="preview-bg" id="preview-bg">
+            <div class="preview-card" id="preview-card">
+              <div class="preview-card-header">
+                <div class="preview-avatar"></div>
+                <div class="preview-meta"><div class="preview-title">Glass Card</div><div class="preview-subtitle">Frosted UI Component</div></div>
+              </div>
+              <p class="preview-text">This is how your glassmorphism component will look. Adjust the controls to customize.</p>
+              <div class="preview-tags"><span class="preview-tag">CSS</span><span class="preview-tag">Glass</span><span class="preview-tag">UI</span></div>
+              <button class="preview-btn">Action Button</button>
+            </div>
+          </div>
+          <div class="preview-bg-controls">
+            <label>Background:</label>
+            <div class="bg-swatches" id="bg-swatches">
+              <button class="swatch active" data-bg="gradient-1" style="background:linear-gradient(135deg,#667eea,#764ba2)"></button>
+              <button class="swatch" data-bg="gradient-2" style="background:linear-gradient(135deg,#0d9488,#059669)"></button>
+              <button class="swatch" data-bg="gradient-3" style="background:linear-gradient(135deg,#f97316,#ef4444)"></button>
+              <button class="swatch" data-bg="gradient-4" style="background:linear-gradient(135deg,#0ea5e9,#6366f1)"></button>
+              <button class="swatch" data-bg="gradient-5" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"></button>
+              <button class="swatch" data-bg="gradient-6" style="background:linear-gradient(135deg,#1e293b,#0f172a)"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls-panel" id="controls-panel">
+          <div class="controls-section">
+            <h3 class="controls-title">🔮 Glass Effect</h3>
+            <div class="control-group"><div class="control-label"><label for="ctrl-blur">Blur</label><span class="control-value" id="val-blur">12px</span></div><input type="range" id="ctrl-blur" min="0" max="40" value="12"></div>
+            <div class="control-group"><div class="control-label"><label for="ctrl-opacity">Background Opacity</label><span class="control-value" id="val-opacity">0.15</span></div><input type="range" id="ctrl-opacity" min="0" max="100" value="15"></div>
+            <div class="control-group"><div class="control-label"><label for="ctrl-saturation">Saturation</label><span class="control-value" id="val-saturation">180%</span></div><input type="range" id="ctrl-saturation" min="100" max="300" value="180" step="10"></div>
+            <div class="control-group"><div class="control-label"><label for="ctrl-bg-color">BG Color</label><span class="control-value" id="val-bg-color">#ffffff</span></div><input type="color" id="ctrl-bg-color" value="#ffffff"></div>
+          </div>
+          <div class="controls-section">
+            <h3 class="controls-title">📐 Border & Shape</h3>
+            <div class="control-group"><div class="control-label"><label for="ctrl-radius">Border Radius</label><span class="control-value" id="val-radius">16px</span></div><input type="range" id="ctrl-radius" min="0" max="50" value="16"></div>
+            <div class="control-group"><div class="control-label"><label for="ctrl-border-opacity">Border Opacity</label><span class="control-value" id="val-border-opacity">0.20</span></div><input type="range" id="ctrl-border-opacity" min="0" max="100" value="20"></div>
+            <div class="control-group"><div class="control-label"><label for="ctrl-border-color">Border Color</label><span class="control-value" id="val-border-color">#ffffff</span></div><input type="color" id="ctrl-border-color" value="#ffffff"></div>
+          </div>
+          <div class="controls-section">
+            <h3 class="controls-title">🌑 Shadow</h3>
+            <div class="control-group"><div class="control-label"><label for="ctrl-shadow-blur">Shadow Blur</label><span class="control-value" id="val-shadow-blur">30px</span></div><input type="range" id="ctrl-shadow-blur" min="0" max="80" value="30"></div>
+            <div class="control-group"><div class="control-label"><label for="ctrl-shadow-opacity">Shadow Opacity</label><span class="control-value" id="val-shadow-opacity">0.10</span></div><input type="range" id="ctrl-shadow-opacity" min="0" max="50" value="10"></div>
+          </div>
+          <div class="controls-section">
+            <h3 class="controls-title">📏 Dimensions</h3>
+            <div class="control-group"><div class="control-label"><label for="ctrl-padding">Padding</label><span class="control-value" id="val-padding">24px</span></div><input type="range" id="ctrl-padding" min="8" max="60" value="24" step="2"></div>
+          </div>
+          <div class="controls-actions">
+            <button class="btn btn-primary" id="btn-copy-css">📋 Copy CSS</button>
+            <button class="btn btn-secondary" id="btn-reset">🔄 Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-output" id="code-output">
+        <div class="code-header">
+          <div class="code-tabs">
+            <button class="code-tab active" data-lang="css" id="tab-css">CSS</button>
+            <button class="code-tab" data-lang="tailwind" id="tab-tailwind">Tailwind</button>
+            <button class="code-tab" data-lang="html" id="tab-html">HTML</button>
+          </div>
+          <button class="btn-copy-code" id="btn-copy-code" title="Copy code">📋 Copy</button>
+        </div>
+        <pre class="code-block"><code id="code-content"></code></pre>
+      </div>
+    </section>
+
+    <!-- PRESETS -->
+    <section id="presets" class="section">
+      <div class="section-header"><h2>Ready-to-Use Presets</h2><p>Click any preset to load it. Customize further or copy directly.</p></div>
+      <div class="presets-grid" id="presets-grid"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="section-header"><h2>What is Glassmorphism?</h2><p>The modern UI trend — and how to use it.</p></div>
+      <div class="about-grid">
+        <div class="about-card"><div class="about-icon">🔮</div><h3>Frosted Glass</h3><p>Uses <code>backdrop-filter: blur()</code> with semi-transparent backgrounds to create depth.</p></div>
+        <div class="about-card"><div class="about-icon">🎨</div><h3>Design Tips</h3><p>Works best on vibrant backgrounds. Use subtle borders and enough contrast for readability.</p></div>
+        <div class="about-card"><div class="about-icon">⚡</div><h3>Browser Support</h3><p>Supported in Chrome, Firefox, Safari, and Edge. Degrades gracefully in older browsers.</p></div>
+        <div class="about-card"><div class="about-icon">🛠️</div><h3>How to Use</h3><p>Adjust the controls, see real-time preview, then copy the CSS into your project.</p></div>
+        <div class="about-card"><div class="about-icon">📱</div><h3>Responsive</h3><p>Generated CSS adapts to any layout or container size automatically.</p></div>
+        <div class="about-card"><div class="about-icon">🚀</div><h3>Open Source</h3><p>100% free. No dependencies, no frameworks, no build tools required.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="app-footer">
+    <div class="footer-inner">
+      <p>Made with <span class="heart">♥</span> — Open Source & Free Forever</p>
+      <p class="footer-sub">Glass UI Generator &bull; No dependencies &bull; Just open and use</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"><span id="toast-message">✅ Copied!</span></div>
+  <script src="script.js"></script>
+</body>
+</html>
